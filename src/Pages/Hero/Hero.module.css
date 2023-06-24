@@ -1,0 +1,53 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.Container{
+  min-width: 100%;
+  height: 99vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.Logo {
+  max-width: 65px;
+  max-height: 65px;
+
+  transition: transform ease 0.3s;
+}
+.Logo:hover {
+  cursor: pointer;
+  transform: scale(1.03);
+}
+.Title{
+  color: #6486DE;
+  font-weight: 700;
+  font-size: 60px;
+  margin: 0;
+}
+.SubTitle{
+  color: #6486DE;
+  font-weight: 300;
+  font-size: 20px;
+  margin: 0;
+}
+.Button {
+  border: none;
+  background-color: #4d7cf3;
+  color: #fff;
+  font-size: 18px;
+  width: 250px;
+  height: 50px;
+  border-radius: 50px;
+  margin: 20px;
+  
+  transition: transform ease 0.3s;
+}
+.Button:hover {
+  cursor: pointer;
+  transform: scale(1.03);
+}

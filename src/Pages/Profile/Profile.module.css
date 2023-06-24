@@ -1,0 +1,46 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    min-height: 100vh;
+    min-width: 100%
+}
+.profileContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    background-color: #F1F4F9;
+    height: 360px;
+    width: 900px;
+    border-radius: 25px;
+
+    padding: 30px;
+}
+.usernameText {
+    font-size: 20px;
+    color: #888A8F;
+    margin-bottom: 25px;
+}
+.detailsText {
+    font-size: 15px;
+    color: #888A8F;
+    margin: 10px 0;
+}
+.logoutButton {
+    background-color: #E86171;
+    height: 30px;
+    width: 130px;
+
+    color: #fff;
+
+    border: none;
+    border-radius: 25px;
+    transition: background-color 0.2s ease-in-out
+}
+.logoutButton:hover {
+    cursor: pointer;
+    background-color: #c55260;
+
+}

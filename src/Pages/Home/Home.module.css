@@ -1,0 +1,138 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    padding: 0 10%;
+    width: 100vw;
+    min-height: 100vh;
+}
+.fileListDiv {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 5% 20px;
+    width: 60%;
+}
+.fileItem {
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: 80px auto;
+
+    background-color: #F1F4F9;
+    height: 40px;
+    width: 100%;
+    border-radius: 20px;
+
+    margin: 10px 0;
+    padding: 5px 20px;
+    transition: background-color ease 0.3s;
+}
+.fileItem:hover {
+    cursor:pointer;
+    background-color: #6486DE;
+}
+.fileItem:hover .fileItemSize, .fileItem:hover .fileItemName {
+    color: #fff;
+}
+.fileItemSelected {
+    background-color: #6486DE !important;
+    color: #fff !important;
+}
+
+.fileItemSizeDiv {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    grid-column-start: 1;
+}
+.fileItemSize {
+    color: #A9A9A9;
+    font-size: 14px;
+    font-weight: 300;
+}
+.fileItemNameDiv {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    grid-column-start: 2;
+}
+.fileItemName {
+    color: #000;
+    font-size: 16px;
+    font-weight: 400;
+}
+.fileDescriptionContainerDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5% 20px;
+    width: 40%;
+}
+.fileDescriptionDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: #F1F4F9;
+    height: 360px;
+    width: 100%;
+    border-radius: 25px;
+
+    padding: 30px;
+}
+.noFile {
+    color: #A9A9A9;
+    font-size: 20px;
+    font-weight: 400;
+}
+.fileDescription {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+.fileDescriptionDetailsDiv {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.descriptionItem {
+    font-size: 13px;
+    font-weight: 400;
+    color: #888A8F;
+    margin: 5px 0;
+}
+.fileDescriptionButtonsDiv {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 100%;
+    height: 40px;
+}
+.settingsButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #6486DE;
+    height: 30px;
+    width: 30px;
+
+    border:none;
+    border-radius: 25px;
+}
+.settingsButtonIcon {
+    height: 25px;
+    width: 25px;
+}
+.shareButton {
+    background-color: #6486DE;
+    color: #fff;
+    width: 80%;
+    height: 30px;
+
+    border: none;
+    border-radius: 25px;
+}
