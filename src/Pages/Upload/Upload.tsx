@@ -22,7 +22,7 @@ function Upload() {
                     <p className={FileName ? styles.selectedFile : styles.noFile}>{FileName ? FileName : "Drop your file here..."}</p>
                 </form>
             </div>
-            <button className={styles.submitUpload} form="upload_form" type="submit">Upload File</button>
+            <button className={styles.submitUpload} form="upload_form" type="submit" disabled={FileName ? false : true}>Upload File</button>
         </div>
     )
 }
