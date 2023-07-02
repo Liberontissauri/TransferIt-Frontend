@@ -6,12 +6,12 @@ import conversions from "@/utils/conversion"
 import { useNavigate } from 'react-router-dom'
 import { useUser } from '@/hooks/auth'
 import axios from 'axios'
+import { useFiles } from '@/hooks/files'
 
 const axios_instance = axios.create()
 
 function Home() {
   const navigate = useNavigate();
-  const [FilesLoading, setFilesLoading] = useState(true)
   const [Files, setFiles] = useState<any[]>([{name: "testfile.jpg", size: 192000000},{name: "anotherfile.jpg", size: 8000000}])
   const [SelectedFile, setSelectedFile] = useState<number | null>(null)
   const user = useUser({
@@ -19,17 +19,18 @@ function Home() {
     post_logout_url: "/dashboard",
     login_url: "/login"
   })
+  const files = useFiles({axios_instance: axios_instance})
 
   return (
     <div className={styles.container}>
         <Navbar></Navbar>
         <div className={styles.fileListDiv}>
-          {Files.map((file, index) => (
+          {files.map((file, index) => (
           <div className={`${styles.fileItem} ${SelectedFile == index ? styles.fileItemSelected: ""}`} onClick={() => (SelectedFile == index ? setSelectedFile(null) : setSelectedFile(index))}>
             <div className={styles.fileItemSizeDiv}>
-              <p className={`${styles.fileItemSize} ${SelectedFile == index ? styles.fileItemSelected: ""}`}>{conversions.convertBitToText(Files[index].size)}</p></div>
+              <p className={`${styles.fileItemSize} ${SelectedFile == index ? styles.fileItemSelected: ""}`}>{conversions.convertByteToText(files[index].data.size)}</p></div>
             <div className={styles.fileItemNameDiv}>
-              <p className={`${styles.fileItemName} ${SelectedFile == index ? styles.fileItemSelected: ""}`}>{file.name}</p></div>
+              <p className={`${styles.fileItemName} ${SelectedFile == index ? styles.fileItemSelected: ""}`}>{file.data.name}</p></div>
             </div>
           ))}
         </div>
@@ -38,9 +39,9 @@ function Home() {
               {SelectedFile != null ? (
               <div className={styles.fileDescription}>
                 <div className={styles.fileDescriptionDetailsDiv}>
-                  <p className={styles.descriptionItem}>Filename: {Files[SelectedFile].name}</p>
-                  <p className={styles.descriptionItem}>Size: {conversions.convertBitToText(Files[SelectedFile].size)}</p>
-                  <p className={styles.descriptionItem}>Uploaded at: {"22/3/2022"}</p>
+                  <p className={styles.descriptionItem}>Filename: {files[SelectedFile].data.name}</p>
+                  <p className={styles.descriptionItem}>Size: {conversions.convertByteToText(files[SelectedFile].data.size)}</p>
+                  <p className={styles.descriptionItem}>Uploaded at: {files[SelectedFile].data.created_at}</p>
                   <p className={styles.descriptionItem}>Privacy: {"anyone with URL"}</p>
                 </div>
                 <div className={styles.fileDescriptionButtonsDiv}>

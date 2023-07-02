@@ -1,18 +1,16 @@
 
-function convertBitToText(bits: number) {
+function convertByteToText(bytes: number) {
 
-    const GIGABYTE_BIT_QUANTITY = 8000000000
-    const MEGABYTE_BIT_QUANTITY = 8000000
-    const KILOBYTE_BIT_QUANTITY = 8000
-    const BYTE_BIT_QUANTITY = 8
-
-    if (bits > GIGABYTE_BIT_QUANTITY) return `${bits/GIGABYTE_BIT_QUANTITY} GB`
-    if (bits > MEGABYTE_BIT_QUANTITY) return `${bits/MEGABYTE_BIT_QUANTITY} mb`
-    if (bits > KILOBYTE_BIT_QUANTITY) return `${bits/KILOBYTE_BIT_QUANTITY} kb`
-    if (bits > BYTE_BIT_QUANTITY) return `${bits/BYTE_BIT_QUANTITY} bytes`
-    return `${bits/BYTE_BIT_QUANTITY} bits`
+    const GIGABYTE_BYTE_QUANTITY = 1000000000
+    const MEGABYTE_BYTE_QUANTITY = 1000000
+    const KILOBYTE_BYTE_QUANTITY = 1000
+    
+    if (bytes > GIGABYTE_BYTE_QUANTITY) return `${Math.round(bytes/GIGABYTE_BYTE_QUANTITY)} GB`
+    if (bytes > MEGABYTE_BYTE_QUANTITY) return `${Math.round(bytes/MEGABYTE_BYTE_QUANTITY)} mb`
+    if (bytes > KILOBYTE_BYTE_QUANTITY) return `${Math.round(bytes/KILOBYTE_BYTE_QUANTITY)} kb`
+    return `${bytes} bytes`
 }
 
 export default {
-    convertBitToText
+    convertByteToText
 }

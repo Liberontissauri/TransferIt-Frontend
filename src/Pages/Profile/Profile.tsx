@@ -19,7 +19,7 @@ function Profile() {
             <div className={styles.profileContainer}>
                 <div className={styles.userInfoDiv}>
                     <h1 className={styles.usernameText}>{user.data.username}</h1>
-                    <p className={styles.detailsText}>{`Storage: ${conversion.convertBitToText(80000000)}/${conversion.convertBitToText(user.data.storage_limit)}`}</p>
+                    <p className={styles.detailsText}>{`Storage: ${conversion.convertByteToText(80000000)}/${conversion.convertByteToText(user.data.storage_limit)}`}</p>
                     <p className={styles.detailsText}>{`Created at: ${user.data.created_at}`}</p>
                 </div>
                 <div className={styles.userButtonsDiv}>

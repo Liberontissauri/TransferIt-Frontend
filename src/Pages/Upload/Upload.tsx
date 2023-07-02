@@ -17,7 +17,7 @@ function Upload() {
         <div className={styles.container}>
             <Navbar></Navbar>
             <div className={styles.formContainer} onClick={() => document.getElementById("file")?.click()}>
-                <form className={styles.uploadBox} id="upload_form" method="post" action="/api/files/upload" encType="multipart/form-data">
+                <form className={styles.uploadBox} id="upload_form" method="post" action="/api/files/upload" encType="multipart/form-data" acceptCharset="ISO-8859-1">
                     <input className={styles.fileInput} type="file" id="file" name="file" onChange={e => {e.target.files && setFileName(e.target.files[0].name)}}></input>
                     <p className={FileName ? styles.selectedFile : styles.noFile}>{FileName ? FileName : "Drop your file here..."}</p>
                 </form>
